@@ -11,7 +11,12 @@ DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
 where TABLE_NAME = 'job';
 --Part 2
+SELECT *
+FROM techjobs.employer
+WHERE location = "St. Louis City";
 
+INSERT INTO skill (name)
+VALUES ('JAVA');
 --Part 3
 
 --Part 4

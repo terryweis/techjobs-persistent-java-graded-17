@@ -14,14 +14,14 @@ public abstract class AbstractEntity {
 @Id
 @GeneratedValue
     private int id;
-
+    @NotBlank
+    @Size(max = 100)
     private String name;
 
     public int getId() {
         return id;
     }
-@NotBlank
-@Size(max = 100)
+
     public String getName() {
         return name;
     }
