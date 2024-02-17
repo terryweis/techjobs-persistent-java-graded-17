@@ -68,14 +68,14 @@ private SkillRepository skillRepository;
                 Employer employer = selectEmployer.get();
                 newJob.setEmployer(employer);
                 model.addAttribute("employerId", employer.getId());
-
+            }
                 List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
                 newJob.setSkills(skillObjs);
-                model.addAttribute("skills.id", skillObjs);
+                model.addAttribute("skills", skillObjs);
 
                 jobRepository.save(newJob);
 
-            }
+
 
         }
 
