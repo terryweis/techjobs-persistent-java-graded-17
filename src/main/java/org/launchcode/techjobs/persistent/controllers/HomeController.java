@@ -7,6 +7,7 @@ import org.launchcode.techjobs.persistent.models.Skill;
 import org.launchcode.techjobs.persistent.models.data.EmployerRepository;
 import org.launchcode.techjobs.persistent.models.data.JobRepository;
 import org.launchcode.techjobs.persistent.models.data.SkillRepository;
+import org.launchcode.techjobs.persistent.models.dto.JobSkillDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,8 +71,10 @@ private SkillRepository skillRepository;
 
                 List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
                 newJob.setSkills(skillObjs);
+                model.addAttribute("skills.id", skillObjs);
+
                 jobRepository.save(newJob);
-                model.addAttribute("skills", skills);
+
             }
 
         }
